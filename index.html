@@ -5,17 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <!-- Vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.global.min.js"></script>
     <title>Email</title>
 </head>
 <body>
     <div id="app">
         <main>
             <h1>L'email generate sono:</h1>
+            <ul>
+                <li v-for="(email, index) in emailsArray">{{email}}</li>
+            </ul>
         </main>
 
     </div>
-
     <script src="js/script.js"></script>
 </body>
-</html>
+</html> 

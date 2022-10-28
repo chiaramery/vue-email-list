@@ -3,7 +3,6 @@
     https://flynn.boolean.careers/exercises/api/random/mail
     generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
 */
-
 const { createApp } = Vue;
 
 createApp({
@@ -13,13 +12,15 @@ createApp({
         }
     },
     methods: {
-
+        getEmail () {
+            for(i = 0; i <= 9; i++){
+                axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then( (resp) => {
+                this.emailsArray.push(resp.data.response);
+                });
+            }
+        },
     },
     created () {
-        axios
-        .get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then( (resp) => {
-        console.log(resp);
-        });
+        this.getEmail();
     },
 }).mount("#app");
