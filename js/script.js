@@ -21,6 +21,6 @@ createApp({
         },
     },
     created () {
-        this.getEmail();
+        this.getEmail()
     },
 }).mount("#app");
